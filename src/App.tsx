@@ -1,49 +1,47 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import ForgetPassword from "./forget-password/ForgetPassword"
-import { Toaster } from 'react-hot-toast'
-import ResetPassword from './reset-password/ResetPassword'
-import { createHashRouter, RouterProvider } from 'react-router-dom'
-import AuthLayout from './authLayOut/AuthLayout'
-import Login from './login/Login'
+import "./App.css";
+import ForgetPassword from "./forget-password/ForgetPassword";
+import { Toaster } from "react-hot-toast";
+import ResetPassword from "./reset-password/ResetPassword";
+import { createHashRouter, RouterProvider } from "react-router-dom";
+import AuthLayout from "./authLayOut/AuthLayout";
+import Login from "./login/Login";
+import Register from "./register/Register";
 function App() {
-   const Routes = createHashRouter([
+  const Routes = createHashRouter([
     {
-    
-  
-      path:'',
-      element:<AuthLayout/>,
-      children:[
+      path: "",
+      element: <AuthLayout />,
+      children: [
         {
-          path:'', 
-          element:<Login/>
-          
+          index: true,
+          element: <Login />,
         },
-         {
-          path:'forget-password', 
-          element:  <ForgetPassword/>
-
-          
+        {
+          path: "login",
+          element: <Login />,
         },
-         {
-          path:'reset-password', 
-          element: <ResetPassword/>
-
-          
-        }
+        {
+          path: "register",
+          element: <Register />,
+        },
+        {
+          path: "forget-password",
+          element: <ForgetPassword />,
+        },
+        {
+          path: "reset-password",
+          element: <ResetPassword />,
+        },
       ],
-      
-    }
-    ])
+    },
+  ]);
 
   return (
     <>
-  <RouterProvider router={Routes}></RouterProvider>
-  <Toaster />
+      <RouterProvider router={Routes}></RouterProvider>
+      <Toaster />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
