@@ -11,12 +11,14 @@ import ReusableForm from "../reusableForm/ReusableForm";
 import { getValidationRules } from "../validation/validation";
 import ButtonForm from "../../src/buttonForm/ButtonForm";
 
+
 function ResetPassword() {
   interface ResetData {
     email: string;
     password: string;
     otp: string;
   }
+  
 
   const navigate = useNavigate();
   const location = useLocation();
