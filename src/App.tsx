@@ -6,11 +6,15 @@ import { createHashRouter, RouterProvider } from "react-router-dom";
 import AuthLayout from "./authLayOut/AuthLayout";
 import Login from "./login/Login";
 import Register from "./register/Register";
+import NotFound from "./not-found/NotFound";
+import DashboardLayout from "./dashboardLayout/DashboardLayout";
+import Dashboard from "./dashboard/Dashboard";
 function App() {
   const Routes = createHashRouter([
     {
       path: "",
       element: <AuthLayout />,
+      errorElement: <NotFound />,
       children: [
         {
           index: true,
@@ -31,6 +35,17 @@ function App() {
         {
           path: "reset-password",
           element: <ResetPassword />,
+        },
+      ],
+    },
+    {
+      path: "/dashboard",
+      element: <DashboardLayout />,
+      errorElement: <NotFound />,
+      children: [
+        {
+          index: true,
+          element: <Dashboard />,
         },
       ],
     },
