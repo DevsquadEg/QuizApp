@@ -11,7 +11,7 @@ import axios, { isAxiosError } from "axios";
 
 export default function Register() {
   const navigate = useNavigate();
-  const { email, password, firstName, lastName } = getValidationRules();
+  const { email, password, role, firstName, lastName } = getValidationRules();
 
   interface RegisterData {
     email: string;
@@ -84,6 +84,7 @@ export default function Register() {
         <FormInput
           label="Your Role"
           name="role"
+          rules={role}
           placeholder="Select Your Role"
           type="text"
         />

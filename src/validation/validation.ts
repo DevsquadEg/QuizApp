@@ -28,4 +28,7 @@ export const getValidationRules = () => ({
   lastName: {
     required: getRequiredMessage("Last Name"),
   },
+  role: {
+    required: getRequiredMessage("Role"),
+  },
 });
