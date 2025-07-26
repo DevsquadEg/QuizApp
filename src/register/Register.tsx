@@ -2,36 +2,44 @@ import { FormProvider, useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import ReusableForm from "../reusableForm/ReusableForm";
 import { FormInput } from "../formInput/FormInput";
-import ButtonForm from "../buttonForm/ButtonForm";
-import axios, { isAxiosError } from "axios";
-import toast from "react-hot-toast";
 import { getValidationRules } from "../validation/validation";
+import ButtonForm from "../buttonForm/ButtonForm";
+import toast from "react-hot-toast";
+import axios, { isAxiosError } from "axios";
 
-export default function Login() {
+// type Props = {};
+
+export default function Register() {
   const navigate = useNavigate();
-  const { email, password } = getValidationRules();
+  const { email, password, role, firstName, lastName } = getValidationRules();
 
-  interface LoginData {
+  interface RegisterData {
     email: string;
+    role: string;
+    first_name: string;
+    last_name: string;
     password: string;
   }
 
   const methods = useForm({
     defaultValues: {
       email: "",
+      role: "Student",
+      first_name: "",
+      last_name: "",
       password: "",
     },
   });
 
-  const onSubmit = async (data: LoginData) => {
+  const onSubmit = async (data: RegisterData) => {
     console.log(data);
     // return;
     try {
       const response = await axios.post(
-        `https://upskilling-egypt.com:3005/api/auth/login`,
+        `https://upskilling-egypt.com:3005/api/auth/register`,
         data
       );
-      navigate("/dashboard", { state: data?.email });
+      navigate("/login", { state: data?.email });
       console.log(response);
 
       toast.success(
@@ -46,12 +54,39 @@ export default function Login() {
   return (
     <FormProvider {...methods}>
       <ReusableForm onSubmit={methods.handleSubmit(onSubmit)}>
+        <div className="flex gap-1">
+          <div className="w-1/2">
+            <FormInput
+              label="First Name"
+              name="first_name"
+              rules={firstName}
+              placeholder="Enter Your First Name"
+              type="text"
+            />
+          </div>
+          <div className="w-1/2">
+            <FormInput
+              label="Last Name"
+              name="last_name"
+              rules={lastName}
+              placeholder="Enter Your Last Name"
+              type="text"
+            />
+          </div>
+        </div>
         <FormInput
           label="Your Email Address"
           name="email"
           rules={email}
           placeholder="Type Your Email"
           type="email"
+        />
+        <FormInput
+          label="Your Role"
+          name="role"
+          rules={role}
+          placeholder="Select Your Role"
+          type="text"
         />
         <FormInput
           label="Password"
@@ -62,14 +97,8 @@ export default function Login() {
         />
         <div className="flex items-center justify-between text-white">
           <ButtonForm isSubmitting={methods.formState.isSubmitting}>
-            Sign In
+            Sign Up
           </ButtonForm>
-          <a
-            onClick={() => navigate("/forget-password")}
-            className="text-sm font-medium text-[#F5F5F5] hover:underline hover:cursor-pointer"
-          >
-            Forget Password ?
-          </a>
         </div>
       </ReusableForm>
     </FormProvider>

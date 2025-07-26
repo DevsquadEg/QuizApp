@@ -2,14 +2,14 @@ export const getRequiredMessage = (fieldName: string) =>
   `${fieldName} is required`;
 
 export const getValidationRules = () => ({
-    email: {
+  email: {
     required: getRequiredMessage("Email"),
     pattern: {
       value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
       message: "Invalid email address",
     },
   },
-   password: {
+  password: {
     required: getRequiredMessage("Password"),
     minLength: {
       value: 8,
@@ -22,4 +22,13 @@ export const getValidationRules = () => ({
         "Password must contain at least one uppercase letter, one lowercase letter, one number and one special character",
     },
   },
-})
+  firstName: {
+    required: getRequiredMessage("First Name"),
+  },
+  lastName: {
+    required: getRequiredMessage("Last Name"),
+  },
+  role: {
+    required: getRequiredMessage("Role"),
+  },
+});
