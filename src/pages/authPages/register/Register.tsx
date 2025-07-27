@@ -1,9 +1,9 @@
 import { FormProvider, useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import ReusableForm from "../reusableForm/ReusableForm";
-import { FormInput } from "../formInput/FormInput";
-import { getValidationRules } from "../validation/validation";
-import ButtonForm from "../buttonForm/ButtonForm";
+import ReusableForm from "../../../components/reusableForm/ReusableForm";
+import { FormInput } from "../../../formInput/FormInput";
+import { getValidationRules } from "../../../services/validation/validation";
+import ButtonForm from "../../../buttonForm/ButtonForm";
 import toast from "react-hot-toast";
 import axios, { isAxiosError } from "axios";
 

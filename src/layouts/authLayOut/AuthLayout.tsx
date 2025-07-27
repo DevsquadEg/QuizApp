@@ -1,20 +1,23 @@
 import { Link, Outlet, useLocation } from "react-router-dom";
-import Logo from "../../src/assets/Logo-white.png";
-import authImage from "../../src/assets/AuthLogo.png";
+
+import authImage from "/public/imgs/Logoauth.svg";
 import { User, UserPlus } from "lucide-react";
-export default function AuthLayouts() {
+export default function AuthLayout() {
   const location = useLocation();
+  const isLogin = location.pathname === "/login" || location.pathname === "/";
+  const isRegister = location.pathname === "/register";
   const allowedPaths = ["/", "/login", "/register"];
-  const Login =
-    location.pathname === "/login"
-      ? "border-[4px] border-(--color-title) text-(--color-title)"
-      : location.pathname === "/"
-      ? "border-[4px] border-(--color-title) text-(--color-title)"
-      : "text-white";
-  const Register =
-    location.pathname === "/register"
-      ? "border-[4px] border-(--color-title) text-(--color-title)"
-      : "text-white";
+
+  
+  const Login = isLogin
+    ? "border-[4px] border-[--color-title] text-[--color-title]"
+    : "text-white";
+  
+const Register = isRegister
+  ? "border-[4px] border-[--color-title] text-[--color-title]"
+    : "text-white";
+  
+  
   const getPageTitle = () => {
     switch (location.pathname) {
       case "/login":
@@ -34,12 +37,21 @@ export default function AuthLayouts() {
 
   return (
     <>
-      <div className="grid min-h-screen grid-cols-1 bg-black lg:grid-cols-5">
-        <div className="text-(--color-title) custom:col-span-12 p-12 lg:col-span-3">
-          <img src={Logo} alt="Logo" className="w-48 pb-12" />
-          <h1 className="mb-8 text-2xl font-bold tracking-wider text-(--color-title)">
+      <div
+        className="grid min-h-screen grid-cols-1  lg:grid-cols-2"
+        style={{ backgroundColor: "#0D1321" }}
+      >
+        {/* Left side: Form */}
+        <div className="w-full p-6 sm:p-12 text-white flex flex-col justify-center lg:w-auto">
+          <img
+            src={authImage}
+            alt="Logo"
+            className="w-60 fixed top-6 left-6 z-50"
+          />
+          <h1 className="mb-8 text-2xl font-bold tracking-wider">
             {getPageTitle()}
           </h1>
+
           {allowedPaths.map(
             (item) =>
               item === location.pathname && (
@@ -57,7 +69,7 @@ export default function AuthLayouts() {
                       className={`flex h-[120px] w-[150px] flex-col items-center justify-center rounded-lg bg-[#333333] shadow ${Register}`}
                     >
                       <UserPlus size={60} />
-                      <span className="font-bold capitalize"> Sign Up</span>
+                      <span className="font-bold capitalize">Sign Up</span>
                     </div>
                   </Link>
                 </div>
@@ -65,9 +77,11 @@ export default function AuthLayouts() {
           )}
           <Outlet />
         </div>
-        <div className="custom:col-span-12 p-6 px-11 sm:px-6 lg:col-span-2">
+
+        {/* Right side: Image */}
+        <div className="hidden p-6 px-11 items-center justify-center sm:flex">
           <img
-            src={authImage}
+            src="/imgs/rightAuth.svg"
             alt="Quiz app Illustration"
             className="h-full w-full object-contain"
           />

@@ -1,14 +1,11 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-import Logo from "../../src/assets/Logo-white.png";
-import authImage from "../../src/assets/AuthLogo.png";
 import { FormInput } from "../formInput/FormInput";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { FormProvider, useForm } from "react-hook-form";
-import ReusableForm from "../reusableForm/ReusableForm";
-import { getValidationRules } from "../validation/validation";
+import ReusableForm from "../components/reusableForm/ReusableForm";
+import { getValidationRules } from "../services/validation/validation";
 import ButtonForm from "../../src/buttonForm/ButtonForm";
 
 export default function ForgetPassword() {
