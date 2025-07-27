@@ -6,10 +6,14 @@ import ButtonForm from "../buttonForm/ButtonForm";
 import axios, { isAxiosError } from "axios";
 import toast from "react-hot-toast";
 import { getValidationRules } from "../validation/validation";
+import useAuth from "../Hooks/useAuth";
+import Cookies from "js-cookie";
+
 
 export default function Login() {
   const navigate = useNavigate();
   const { email, password } = getValidationRules();
+const {setLogedInData}= useAuth()
 
   interface LoginData {
     email: string;
@@ -33,6 +37,10 @@ export default function Login() {
       );
       navigate("/dashboard", { state: data?.email });
       console.log(response);
+
+   Cookies.set("LOGEDDATA" , JSON.stringify(response.data.data),{expires:7})
+            setLogedInData(response.data.data)
+
 
       toast.success(
         response?.data?.message || "Password Reset OTP Sent to Your Email"

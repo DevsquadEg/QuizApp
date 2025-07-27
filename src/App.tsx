@@ -9,6 +9,9 @@ import Register from "./register/Register";
 import NotFound from "./not-found/NotFound";
 import DashboardLayout from "./dashboardLayout/DashboardLayout";
 import Dashboard from "./dashboard/Dashboard";
+import GroupList from "./Modules/Instructor/Components/Group/GroupList/GroupList";
+import { AuthContextProvider } from "./Context/AuthContext";
+import  ChangePassword from "./Modules/Authentication/ChangePassword/ChangePassword";
 function App() {
   const Routes = createHashRouter([
     {
@@ -47,13 +50,23 @@ function App() {
           index: true,
           element: <Dashboard />,
         },
+        {
+          path:"group-list",
+          element: <GroupList/>,
+        },
+        {
+          path:"change-password",
+          element: <ChangePassword/>,
+        },
       ],
     },
   ]);
 
   return (
     <>
-      <RouterProvider router={Routes}></RouterProvider>
+    <AuthContextProvider>
+         <RouterProvider router={Routes}></RouterProvider>
+      </AuthContextProvider>
       <Toaster />
     </>
   );

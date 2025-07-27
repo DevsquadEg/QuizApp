@@ -5,4 +5,52 @@
 @source "../node_modules/flowbite";
 @theme {
   --color-title: #c5d86d;
+   --color-main-color: #c5d86d; 
+  --color-main-border-color:#f3f4f6;
+}
+
+
+
+
+
+
+
+
+
+
+
+@layer components {
+  .form-control {
+    width: 100%;
+    padding: 6px 50px;
+    border: 2px solid white;
+    border-radius: 6px;
+    outline: none;
+  }
+
+
+ .auth-btn {
+    width: 100%;
+    padding: 6px;
+    border: 2px solid white;
+    border-radius: 6px;
+   text-align: center;
+   font-weight: 700;
+   margin-block:10px ;
+   background-color: white;
+   color: black;
+   cursor: pointer;
+  }
+
+
+
+}
+
+/* custome classes */
+.addBtn{
+  @apply rounded-3xl px-3 py-2 bg-white text-black font-medium border-2 cursor-pointer
+}
+
+.error-message{
+  @apply  text-red-700 text-sm 
 }
