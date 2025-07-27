@@ -1,6 +1,6 @@
 import { Link, Outlet, useLocation } from "react-router-dom";
-import Logo from "../../src/assets/Logo-white.png";
-import authImage from "../../src/assets/AuthLogo.png";
+
+import authImage from "/public/imgs/Logoauth.svg";
 import { User, UserPlus } from "lucide-react";
 export default function AuthLayouts() {
   const location = useLocation();
@@ -36,7 +36,7 @@ export default function AuthLayouts() {
     <>
       <div className="grid min-h-screen grid-cols-1 bg-black lg:grid-cols-5">
         <div className="text-(--color-title) custom:col-span-12 p-12 lg:col-span-3">
-          <img src={Logo} alt="Logo" className="w-48 pb-12" />
+          <img src={authImage} alt="Logo" className="w-48 pb-12" />
           <h1 className="mb-8 text-2xl font-bold tracking-wider text-(--color-title)">
             {getPageTitle()}
           </h1>
@@ -67,7 +67,7 @@ export default function AuthLayouts() {
         </div>
         <div className="custom:col-span-12 p-6 px-11 sm:px-6 lg:col-span-2">
           <img
-            src={authImage}
+            src="/public/imgs/rightAuth.svg"
             alt="Quiz app Illustration"
             className="h-full w-full object-contain"
           />

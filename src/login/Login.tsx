@@ -1,11 +1,11 @@
 import { FormProvider, useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import ReusableForm from "../reusableForm/ReusableForm";
+import ReusableForm from "../components/reusableForm/ReusableForm";
 import { FormInput } from "../formInput/FormInput";
 import ButtonForm from "../buttonForm/ButtonForm";
 import axios, { isAxiosError } from "axios";
 import toast from "react-hot-toast";
-import { getValidationRules } from "../validation/validation";
+import { getValidationRules } from "../services/validation/validation";
 
 export default function Login() {
   const navigate = useNavigate();

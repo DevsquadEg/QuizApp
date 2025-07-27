@@ -1,14 +1,14 @@
 import "./App.css";
 import ForgetPassword from "./forget-password/ForgetPassword";
 import { Toaster } from "react-hot-toast";
-import ResetPassword from "./reset-password/ResetPassword";
 import { createHashRouter, RouterProvider } from "react-router-dom";
-import AuthLayout from "./authLayOut/AuthLayout";
+import AuthLayout from "./layouts/authLayOut/AuthLayout";
 import Login from "./login/Login";
-import Register from "./register/Register";
+import Register from "./pages/authPages/register/Register";
 import NotFound from "./not-found/NotFound";
-import DashboardLayout from "./dashboardLayout/DashboardLayout";
+import DashboardLayout from "./layouts/dashboardLayout/DashboardLayout";
 import Dashboard from "./dashboard/Dashboard";
+import ResetPassword from "./pages/authPages/reset-password/ResetPassword";
 function App() {
   const Routes = createHashRouter([
     {

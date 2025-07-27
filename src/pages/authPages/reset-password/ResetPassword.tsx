@@ -1,16 +1,13 @@
-import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
-import Logo from "../../src/assets/Logo-white.png";
-import authImage from "../../src/assets/AuthLogo.png";
-import { FormInput } from "../formInput/FormInput";
+
 import axios from "axios";
 import toast from "react-hot-toast";
 import { FormProvider, useForm } from "react-hook-form";
-import ReusableForm from "../reusableForm/ReusableForm";
-import { getValidationRules } from "../validation/validation";
-import ButtonForm from "../../src/buttonForm/ButtonForm";
 
+import { FormInput } from "../../../formInput/FormInput";
+import ReusableForm from "../../../components/reusableForm/ReusableForm";
+import ButtonForm from "../../../buttonForm/ButtonForm";
+import { getValidationRules } from "../../../services/validation/validation";
 
 function ResetPassword() {
   interface ResetData {
@@ -18,7 +15,6 @@ function ResetPassword() {
     password: string;
     otp: string;
   }
-  
 
   const navigate = useNavigate();
   const location = useLocation();
