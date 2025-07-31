@@ -11,11 +11,12 @@ import {
   Cell,
   ResponsiveContainer,
 } from "recharts";
+import { CompletedQuizzProps } from "../../../../Interfaces/quizz.interface";
 import { isAxiosError } from "axios";
 import toast from "react-hot-toast";
-import type { CompletedQuizzProps, StudentWithGroup } from "../Interfaces/Dashboard.interface";
-import { axiosInstance } from "../Services/axiosInstance";
-import { QUESTION, QUIZ, STUDENT } from "../Services/endPoint";
+import { axiosInstance } from "../../../../Services/axiosInstance";
+import { QUESTION, QUIZ, STUDENT } from "../../../../Services/endPoint";
+import { StudentWithGroup } from "../../../../Interfaces/Dashboard.interface";
 
 const Dashboard = () => {
   const [quizzesList, setQuizzesList] = useState<CompletedQuizzProps[]>([]);

@@ -12,6 +12,8 @@ import AuthLayout from "./layouts/authLayOut/AuthLayout";
 import GroupList from "./Modules/Instructor/Components/Group/GroupList/GroupList";
 import ChangePassword from "./Modules/Authentication/ChangePassword/ChangePassword";
 import ResetPassword from "./pages/authPages/reset-password/ResetPassword";
+import StudentList from "./Modules/Instructor/Components/Students/StudentList/StudentList";
+import QuestionsList from "./Modules/Instructor/Components/Questions/QuestionsList/QuestionsList";
 function App() {
   const Routes = createHashRouter([
     {
@@ -38,6 +40,14 @@ function App() {
         {
           path:"group-list",
           element: <GroupList/>,
+        },
+        {
+          path:"student-list",
+          element: <StudentList/>,
+        },
+        {
+          path:"questions",
+          element: <QuestionsList/>,
         },
         {
           path:"change-password",

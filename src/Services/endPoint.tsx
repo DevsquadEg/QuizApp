@@ -38,7 +38,26 @@
    CREATE_QUESTION: `/question`,
    UPDATE_QUESTION: (id: string) => `/question/${id}`,
    DELETE_QUESTION: (id: string) => `/question/${id}`,
-   SEARCH_QUESTION: `/question/search`,
+      HARD_QUESTIONS :`/question/search?difficulty=hard`,
+   MEDIUM_QUESTIONS :`/question/search?difficulty=medium`,
+   EASY_QUESTIONS :`/question/search?difficulty=easy`,
+   BE_QUESTIONS :`/question/search?type=BE`,
+   FE_QUESTIONS :`/question/search?type=FE`,
+   DB_QUESTIONS :`/question/search?type=DB`,
+
+SEARCH_QUESTION: (difficulty: string, type: string) => {
+  const queryParams: string[] = [];
+
+  if (difficulty) queryParams.push(`difficulty=${difficulty}`);
+  if (type) queryParams.push(`type=${type}`);
+
+  const queryString = queryParams.length ? `?${queryParams.join("&")}` : "";
+
+  return `${baseURL}/question/search${queryString}`;
+}
+
+
+
  };
 
  export const QUIZ = {
