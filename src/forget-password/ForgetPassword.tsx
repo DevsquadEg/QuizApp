@@ -59,7 +59,7 @@ export default function ForgetPassword() {
             <p>
               Login?
               <span className="text-(--color-title) underline">
-                <Link to="login">click here</Link>
+                <Link to="/">click here</Link>
               </span>
             </p>
           </div>
