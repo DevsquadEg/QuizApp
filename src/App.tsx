@@ -52,10 +52,7 @@ function App() {
           path:"questions",
           element: <QuestionsList/>,
         },
-        {
-          path:"student-list",
-          element: <StudentList/>,
-        },
+  
         {
           path:"questions",
           element: <QuestionsList/>,
