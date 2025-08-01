@@ -12,6 +12,9 @@ import AuthLayout from "./layouts/authLayOut/AuthLayout";
 import GroupList from "./Modules/Instructor/Components/Group/GroupList/GroupList";
 import ChangePassword from "./Modules/Authentication/ChangePassword/ChangePassword";
 import ResetPassword from "./pages/authPages/reset-password/ResetPassword";
+import Quiz from "./pages/Quizzes/Quiz";
+import Results from "./pages/Results/Results";
+import ResultsDetails from "./pages/ResultsDetails/ResultsDetails";
 function App() {
   const Routes = createHashRouter([
     {
@@ -39,6 +42,13 @@ function App() {
           path:"group-list",
           element: <GroupList/>,
         },
+        {
+          path:"quizzes",
+          element: <Quiz/>,
+        },
+        { path: "results", element: <Results /> },
+
+        { path: "results-details", element: <ResultsDetails /> },
         {
           path:"change-password",
           element: <ChangePassword/>,
