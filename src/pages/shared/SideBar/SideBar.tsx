@@ -16,8 +16,8 @@ import { useForm } from "react-hook-form";
 import { Menu, MenuItem, Sidebar } from "react-pro-sidebar";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import useToggle from "../../../Hooks/useToggle";
-import CookieServices from "../../../Store/ResultsSlice/CookieServices";
 import useAuth from "../../../Hooks/useAuth";
+import CookieServices from "../../../Store/ResultsSlice/CookieServices";
 
 
 interface IFormChangePass {
@@ -97,10 +97,12 @@ export default function SideBar({ toggleSidebar }: IProps) {
     },
     {
       style: `${
-        pathname === "/dashboard/student" ? "bg-secondColor" : ""
+        pathname === "/dashboard/student-list" ? "bg-secondColor" : ""
       } border-b border-black text-[19px] link`,
-      path: <Link to="/dashboard/student" />,
-      icon: <GraduationCap size={"35px"} className=" p-1 rounded-md bg-[#FFEDDF]" />,
+      path: <Link to="/dashboard/student-list" />,
+      icon: (
+        <GraduationCap size={"35px"} className=" p-1 rounded-md bg-[#FFEDDF]" />
+      ),
       body: "Students",
     },
     {
@@ -108,7 +110,9 @@ export default function SideBar({ toggleSidebar }: IProps) {
         pathname?.includes("quizzes") ? "bg-secondColor" : ""
       } border-b border-black text-[19px] link`,
       path: <Link to="/dashboard/quizzes" />,
-      icon: <LayoutList size={"35px"} className=" p-1 rounded-md bg-[#FFEDDF]" />,
+      icon: (
+        <LayoutList size={"35px"} className=" p-1 rounded-md bg-[#FFEDDF]" />
+      ),
       body: "Quizzes",
     },
     {
@@ -117,7 +121,10 @@ export default function SideBar({ toggleSidebar }: IProps) {
       } border-b border-black  text-[19px] link`,
       path: <Link to="/dashboard/questions" />,
       icon: (
-        <MessageCircleQuestion size={"35px"} className=" p-1 rounded-md bg-[#FFEDDF]" />
+        <MessageCircleQuestion
+          size={"35px"}
+          className=" p-1 rounded-md bg-[#FFEDDF]"
+        />
       ),
       body: "Questions",
     },
@@ -132,9 +139,13 @@ export default function SideBar({ toggleSidebar }: IProps) {
     {
       path: <Link to="/dashboard/change-password" />,
       style: `border-b border-black text-[19px] link`,
-      icon: <LockKeyholeOpen size={"35px"} className=" p-1 rounded-md bg-[#FFEDDF]" />,
+      icon: (
+        <LockKeyholeOpen
+          size={"35px"}
+          className=" p-1 rounded-md bg-[#FFEDDF]"
+        />
+      ),
       body: "ChangePassword",
-      
     },
     {
       style: `border-b border-black text-[19px] link`,
