@@ -36,12 +36,12 @@ function App() {
           element: <Dashboard />,
         },
         {
-          path:"group-list",
-          element: <GroupList/>,
+          path: "group-list",
+          element: <GroupList />,
         },
         {
-          path:"change-password",
-          element: <ChangePassword/>,
+          path: "change-password",
+          element: <ChangePassword />,
         },
       ],
     },
@@ -57,8 +57,8 @@ function App() {
 
   return (
     <>
-    <AuthContextProvider>
-         <RouterProvider router={Routes} />
+      <AuthContextProvider>
+        <RouterProvider router={Routes} />
       </AuthContextProvider>
       <Toaster />
     </>
