@@ -34,7 +34,11 @@ export default function MultiSelectInput({
           {/* Dropdown */}
           <Listbox.Options className="absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-sm shadow-lg ring-1 ring-black/5 focus:outline-none">
             {students.map((student) => (
-              <Listbox.Option key={student._id} value={student._id} as={Fragment}>
+              <Listbox.Option
+                key={student._id}
+                value={student._id}
+                as={Fragment}
+              >
                 {({ active, selected }) => (
                   <li
                     className={`cursor-pointer select-none px-4 py-2 flex items-center gap-2 ${
@@ -61,4 +65,3 @@ export default function MultiSelectInput({
     </Listbox>
   );
 }
-
