@@ -14,6 +14,9 @@ import ChangePassword from "./Modules/Authentication/ChangePassword/ChangePasswo
 import ResetPassword from "./pages/authPages/reset-password/ResetPassword";
 import StudentList from "./Modules/Instructor/Components/Students/StudentList/StudentList";
 import QuestionsList from "./Modules/Instructor/Components/Questions/QuestionsList/QuestionsList";
+import Quiz from "./pages/Quizzes/Quiz";
+import Results from "./pages/Results/Results";
+import ResultsDetails from "./pages/ResultsDetails/ResultsDetails";
 function App() {
   const Routes = createHashRouter([
     {
@@ -38,8 +41,8 @@ function App() {
           element: <Dashboard />,
         },
         {
-          path:"group-list",
-          element: <GroupList/>,
+          path: "group-list",
+          element: <GroupList />,
         },
         {
           path:"student-list",
@@ -50,25 +53,32 @@ function App() {
           element: <QuestionsList/>,
         },
         {
-          path:"change-password",
-          element: <ChangePassword/>,
+          path:"student-list",
+          element: <StudentList/>,
+        },
+        {
+          path:"questions",
+          element: <QuestionsList/>,
+        },
+        {
+          path: "quizzes",
+          element: <Quiz />,
+        },
+        { path: "results", element: <Results /> },
+
+        { path: "results-details", element: <ResultsDetails /> },
+        {
+          path: "change-password",
+          element: <ChangePassword />,
         },
       ],
-    },
-    {
-      path: "*",
-      element: <NotFound />,
-    },
-    {
-      path: "*",
-      element: <NotFound />,
-    },
+    }
   ]);
 
   return (
     <>
-    <AuthContextProvider>
-         <RouterProvider router={Routes} />
+      <AuthContextProvider>
+        <RouterProvider router={Routes} />
       </AuthContextProvider>
       <Toaster />
     </>

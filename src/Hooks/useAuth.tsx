@@ -10,16 +10,6 @@ export default function useAuth(){
 
 
 
-
- 
- 
-
-
-
-
-
-
-
 function logOut(){
     Cookies.remove("LOGEDDATA")
     setLogedInData(undefined)

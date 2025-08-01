@@ -39,6 +39,9 @@ const {setLogedInData}= useAuth()
       console.log(response);
 
    Cookies.set("LOGEDDATA" , JSON.stringify(response.data.data),{expires:7})
+   Cookies.set("token", response.data.data.accessToken, { expires: 7 });
+
+
             setLogedInData(response.data.data)
 
 
