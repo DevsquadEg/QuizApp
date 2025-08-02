@@ -82,7 +82,7 @@ export default function SideBar({ toggleSidebar }: IProps) {
     {
       style: `${
         pathname === "/dashboard" ? "bg-secondColor " : ""
-      } border-b border-black text-[19px] link`,
+      } border-b border-black text-[19px] pt-2 pb-2 link`,
       path: <Link to="/dashboard" />,
       icon: <Users2 size={"35px"} className=" p-1 rounded-md bg-[#FFEDDF]" />,
       body: "Dashboard",
@@ -90,7 +90,7 @@ export default function SideBar({ toggleSidebar }: IProps) {
     {
       style: `${
         pathname === "/dashboard/group-list" ? "bg-secondColor" : ""
-      } border-b border-black text-[19px] link`,
+      } border-b border-black text-[19px] pt-2 pb-2 link`,
       path: <Link to="/dashboard/group-list" />,
       icon: <Home size={"35px"} className=" p-1 rounded-md bg-[#FFEDDF]" />,
       body: "Groups",
@@ -98,7 +98,7 @@ export default function SideBar({ toggleSidebar }: IProps) {
     {
       style: `${
         pathname === "/dashboard/student-list" ? "bg-secondColor" : ""
-      } border-b border-black text-[19px] link`,
+      } border-b border-black text-[19px] pt-2 pb-2 link`,
       path: <Link to="/dashboard/student-list" />,
       icon: (
         <GraduationCap size={"35px"} className=" p-1 rounded-md bg-[#FFEDDF]" />
@@ -108,7 +108,7 @@ export default function SideBar({ toggleSidebar }: IProps) {
     {
       style: `${
         pathname?.includes("quizzes") ? "bg-secondColor" : ""
-      } border-b border-black text-[19px] link`,
+      } border-b border-black text-[19px] link pt-2 pb-2`,
       path: <Link to="/dashboard/quizzes" />,
       icon: (
         <LayoutList size={"35px"} className=" p-1 rounded-md bg-[#FFEDDF]" />
@@ -118,7 +118,7 @@ export default function SideBar({ toggleSidebar }: IProps) {
     {
       style: `${
         pathname === "/dashboard/questions" ? "bg-secondColor" : ""
-      } border-b border-black  text-[19px] link`,
+      } border-b border-black  text-[19px] link pt-2 pb-2`,
       path: <Link to="/dashboard/questions" />,
       icon: (
         <MessageCircleQuestion
@@ -131,14 +131,14 @@ export default function SideBar({ toggleSidebar }: IProps) {
     {
       style: `${
         pathname?.includes("results") ? "bg-secondColor" : ""
-      } border-b border-black text-[19px] link`,
+      } border-b border-black text-[19px] link pt-2 pb-2`,
       path: <Link to="/dashboard/results" />,
       icon: <FileText size={"35px"} className=" p-1 rounded-md bg-[#FFEDDF]" />,
       body: "Results",
     },
     {
-      path: <Link to="/dashboard/change-password" />,
-      style: `border-b border-black text-[19px] link`,
+      path: <Link to="/dashboard/change-password " />,
+      style: `border-b border-black text-[19px] link pt-2 pb-2`,
       icon: (
         <LockKeyholeOpen
           size={"35px"}
@@ -148,7 +148,7 @@ export default function SideBar({ toggleSidebar }: IProps) {
       body: "ChangePassword",
     },
     {
-      style: `border-b border-black text-[19px] link`,
+      style: `border-b border-black text-[19px] link pt-2 pb-2`,
       icon: <LogOut size={"35px"} className=" p-1 rounded-md bg-[#FFEDDF]" />,
       body: "Logout",
       onClick: logout,
@@ -161,7 +161,7 @@ export default function SideBar({ toggleSidebar }: IProps) {
         pathname?.includes("quizzes") || pathname?.includes("exam")
           ? "bg-secondColor"
           : ""
-      } border-b border-black text-[19px]   link`,
+      } border-b border-black text-[19px]   link pt-2 pb-2`,
       path: <Link to="/dashboard/quizzes" />,
       icon: <LayoutList size={"35px"} className=" p-1 rounded-md bg-[#FFEDDF]" />,
       body: "Quizzes",
@@ -169,19 +169,19 @@ export default function SideBar({ toggleSidebar }: IProps) {
     {
       style: `${
         pathname === "/dashboard/results" ? "bg-secondColor" : ""
-      } border-b border-black text-[19px] link`,
+      } border-b border-black text-[19px] link pt-2 pb-2`,
       path: <Link to="/dashboard/results" />,
       icon: <FileText size={"35px"} className=" p-1 rounded-md bg-[#FFEDDF]" />,
       body: "Results",
     },
     {
       path: <Link to="/dashboard/change-password" />,
-      style: `border-b border-black text-[19px] link`,
+      style: `border-b border-black text-[19px] link pt-2 pb-2`,
       icon: <LockKeyholeOpen size={"35px"} className=" p-1 rounded-md bg-[#FFEDDF]" />,
       body: "ChangePassword",
     },
     {
-      style: `border-b border-black text-[19px] link`,
+      style: `border-b border-black text-[19px] link pt-2 pb-2`,
       icon: <LogOut size={"35px"} className=" p-1 rounded-md bg-[#FFEDDF]" />,
       body: "Logout",
       onClick: logout,

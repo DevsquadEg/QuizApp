@@ -99,7 +99,7 @@ const Dashboard = () => {
     <div className="p-4 grid gap-8 grid-cols-1 md:grid-cols-2">
       {/* Quiz Stats */}
       <div className="shadow-lg p-4 rounded-xl bg-white dark:bg-gray-800">
-        <h2 className="text-xl font-bold mb-2 text-gray-700 dark:text-white">Quiz Stats</h2>
+        <h2 className="text-xl font-bold mb-2 text-gray-700 dark:text-white">Quiz Status</h2>
         <ResponsiveContainer width="100%" height={300}>
           <BarChart data={quizzes}>
             <XAxis dataKey="title" stroke="#888" />
@@ -135,7 +135,7 @@ const Dashboard = () => {
       </div>
 
       {/* Top Students */}
-      <div className="shadow-lg p-4 rounded-xl bg-white dark:bg-gray-800">
+      <div className="shadow-lg p-4 rounded-xl bg-white dark:bg-gray-800 ">
         <h2 className="text-xl font-bold mb-2 text-gray-700 dark:text-white">Top 5 Students</h2>
         <ResponsiveContainer width="100%" height={300}>
           <BarChart layout="vertical" data={fiveStudentsData}>

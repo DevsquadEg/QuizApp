@@ -13,7 +13,7 @@ import Cookies from "js-cookie";
 export default function Login() {
   const navigate = useNavigate();
   const { email, password } = getValidationRules();
-const {setLogedInData}= useAuth()
+const {setLogedInData,logedInData}= useAuth()
 
   interface LoginData {
     email: string;
@@ -35,7 +35,15 @@ const {setLogedInData}= useAuth()
         `https://upskilling-egypt.com:3005/api/auth/login`,
         data
       );
-      navigate("/dashboard", { state: data?.email });
+      if (response?.data?.data?.profile?.role === "Instructor") {
+         navigate("/dashboard", { state: data?.email });
+      } else if (response?.data?.data?.profile?.role !== "Instructor") {
+      {
+              navigate("/dashboard/quizzes", { state: data?.email });
+
+      }
+    }
+
       console.log(response);
 
    Cookies.set("LOGEDDATA" , JSON.stringify(response.data.data),{expires:7})
