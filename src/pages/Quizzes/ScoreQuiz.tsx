@@ -76,7 +76,8 @@ const ScoreQuiz = ({
   const scoreData = getScoreData(percentage);
   const IconComponent = scoreData.icon;
   const handleGoToDashboard = () => {
-    navigate("/dashboard");
+    
+    navigate("/dashboard/results");
   };
   const handleResetScore = () => {
     handlerest();
@@ -114,7 +115,7 @@ const ScoreQuiz = ({
           onClick={handleGoToDashboard}
           className="flex-1 rounded-md bg-blue-600 px-4 py-2 text-white transition-colors hover:bg-blue-700"
         >
-          Go to Dashboard
+          Go to Results
         </button>
         <button
           onClick={handleResetScore}
